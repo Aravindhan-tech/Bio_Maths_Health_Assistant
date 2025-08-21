@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Core Inputs - BioMath Health Assistant">
+  <meta name="author" content="BioMath Team">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Title -->
+  <title>BioMath Health Assistant | Core</title>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/core.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="image.png" type="image/x-icon">
+</head>
+<body class="theme-light">
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container flex-between">
+      <h1 class="logo">BioMath<span class="highlight">+</span></h1>
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="core.html" aria-current="page" class="active">Core</a></li>
+          <li><a href="anthropometrics.html">Anthropometrics</a></li>
+          <li><a href="vitals.html">Vitals</a></li>
+          <li><a href="labs.html">Labs</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main-content" role="main" class="main-content">
+    <section class="container">
+      <h2>Core Inputs</h2>
+      <p>Provide your basic information. These values will be reused in <strong>Anthropometrics</strong>, <strong>Vitals</strong>, and <strong>Labs</strong>.</p>
+
+      <!-- Form -->
+      <form id="core-form" aria-describedby="form-note">
+        <fieldset>
+          <legend>Personal Data</legend>
+          
+          <label for="weight">Weight (kg)</label>
+          <input id="weight" name="weight" type="number" step="0.1" min="1" max="500" required aria-required="true">
+
+          <label for="height">Height (m)</label>
+          <input id="height" name="height" type="number" step="0.01" min="0.5" max="2.5" required>
+
+          <label for="age">Age (years)</label>
+          <input id="age" name="age" type="number" min="1" max="120" required>
+
+          <label for="sex">Sex</label>
+          <select id="sex" name="sex" required>
+            <option value="">-- Select --</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="reset" class="btn btn-outline">Clear</button>
+        </div>
+      </form>
+      <p id="form-note" class="note">Your data will be saved locally in this session only.</p>
+
+      <!-- Preview -->
+      <section class="preview" aria-live="polite">
+        <h3>Saved Data Preview</h3>
+        <ul id="preview-list">
+          <li>No data saved yet.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container flex-between">
+      <p>&copy; <span id="year"></span> BioMath Health Assistant. <span class="disclaimer">For educational use only.</span></p>
+      <nav aria-label="Footer Navigation">
+        <a href="#">Privacy</a> | <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/core.js" defer></script>
+</body>
+</html>

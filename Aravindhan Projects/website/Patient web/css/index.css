@@ -1,0 +1,284 @@
+/* ============================
+   BioMath Health Assistant
+   index.css — Advanced Styling
+   ============================ */
+
+/* --------- 1. Theme Variables --------- */
+:root {
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --clr-bg: #ffffff;
+  --clr-text: #0f172a;
+  --clr-muted: #64748b;
+  --clr-primary: #0ea5e9;
+  --clr-accent: #6366f1;
+
+  --radius: 0.75rem;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --max-width: 1200px;
+  --transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+.theme-dark {
+  --clr-bg: #0f172a;
+  --clr-text: #f8fafc;
+  --clr-muted: #94a3b8;
+  --clr-primary: #38bdf8;
+  --clr-accent: #818cf8;
+}
+
+/* --------- 2. Reset & Base Styles --------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.6;
+}
+
+/* --------- 3. Utilities --------- */
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.highlight {
+  color: var(--clr-primary);
+}
+
+/* --------- 4. Accessibility --------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--clr-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: top 0.3s ease;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--clr-accent);
+}
+
+/* --------- 5. Header --------- */
+.site-header {
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-muted);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  font-weight: 600;
+  position: relative;
+}
+
+.navbar a.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-primary);
+  bottom: -4px;
+  left: 0;
+  border-radius: 1px;
+}
+
+.theme-toggle {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* --------- 6. Hero Section --------- */
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--clr-primary) 15%, transparent),
+    color-mix(in srgb, var(--clr-accent) 15%, transparent)
+  );
+  border-bottom: 1px solid var(--clr-muted);
+}
+
+.hero-inner {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  max-width: 650px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  color: var(--clr-muted);
+}
+
+/* --------- 7. Buttons --------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--clr-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--clr-accent);
+}
+
+.btn-outline {
+  border: 2px solid var(--clr-primary);
+  color: var(--clr-primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--clr-primary);
+  color: white;
+}
+
+/* --------- 8. Cards (Features) --------- */
+.card {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: var(--clr-muted);
+}
+
+/* --------- 9. Sections --------- */
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+/* --------- 10. Footer --------- */
+.site-footer {
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-muted);
+  padding: 1rem 0;
+  margin-top: 3rem;
+  font-size: 0.875rem;
+}
+
+.site-footer a {
+  color: var(--clr-muted);
+}
+
+.disclaimer {
+  font-style: italic;
+  color: var(--clr-muted);
+}
+
+/* --------- 11. Noscript --------- */
+.noscript-warning {
+  background: #dc2626;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+/* --------- 12. Animations --------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-title,
+  .hero-text,
+  .btn-primary {
+    animation: fadeInUp 0.8s ease both;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

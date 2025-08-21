@@ -1,0 +1,305 @@
+/* ============================
+   BioMath Health Assistant
+   anthropometrics.css — Advanced Styling
+   ============================ */
+
+/* --------- 1. Theme Variables --------- */
+:root {
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --clr-bg: #ffffff;
+  --clr-text: #0f172a;
+  --clr-muted: #64748b;
+  --clr-primary: #0ea5e9;
+  --clr-accent: #6366f1;
+  --clr-success: #22c55e;
+  --clr-warning: #f59e0b;
+  --clr-error: #dc2626;
+
+  --radius: 0.75rem;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --max-width: 1000px;
+  --transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+.theme-dark {
+  --clr-bg: #0f172a;
+  --clr-text: #f8fafc;
+  --clr-muted: #94a3b8;
+  --clr-primary: #38bdf8;
+  --clr-accent: #818cf8;
+  --clr-success: #4ade80;
+  --clr-warning: #fbbf24;
+  --clr-error: #f87171;
+}
+
+/* --------- 2. Reset & Base --------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--clr-accent);
+}
+
+.highlight {
+  color: var(--clr-primary);
+}
+
+/* --------- 3. Skip Link --------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--clr-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: top 0.3s ease;
+  z-index: 1000;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* --------- 4. Header --------- */
+.site-header {
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-muted);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list a.active {
+  font-weight: 600;
+  border-bottom: 2px solid var(--clr-primary);
+}
+
+.theme-toggle {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* --------- 5. Main Content --------- */
+main h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+main p {
+  color: var(--clr-muted);
+  margin-bottom: 2rem;
+}
+
+/* --------- 6. Form Styles --------- */
+form {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--clr-muted);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--clr-primary) 40%, transparent);
+}
+
+input:invalid:focus {
+  border-color: var(--clr-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--clr-error) 40%, transparent);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--clr-primary);
+  color: white;
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--clr-accent);
+}
+
+.btn-outline {
+  border: 2px solid var(--clr-primary);
+  color: var(--clr-primary);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--clr-primary);
+  color: white;
+}
+
+/* --------- 7. Results Section --------- */
+.results {
+  background: color-mix(in srgb, var(--clr-primary) 5%, var(--clr-bg));
+  border: 1px solid var(--clr-muted);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+}
+
+.results h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.result-card {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.result-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.result-card p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+/* --------- 8. Footer --------- */
+.site-footer {
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-muted);
+  padding: 1rem 0;
+  margin-top: 3rem;
+  font-size: 0.875rem;
+}
+
+.site-footer a {
+  color: var(--clr-muted);
+}
+
+.disclaimer {
+  font-style: italic;
+  color: var(--clr-muted);
+}
+
+/* --------- 9. Animations --------- */
+@media (prefers-reduced-motion: no-preference) {
+  .result-card {
+    animation: fadeInScale 0.6s ease both;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

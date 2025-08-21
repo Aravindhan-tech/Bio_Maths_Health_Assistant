@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BioMath Health Assistant — Smart calculators for BMI, MAP, BSA, eGFR, and more.">
+  <meta name="author" content="BioMath Team">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BioMath Health Assistant">
+  <meta property="og:description" content="Advanced health calculators in one platform — BMI, MAP, labs, vitals, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biomath-app.local">
+  <meta property="og:image" content="images/preview.png">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BioMath Health Assistant",
+    "description": "Quick medical calculators for anthropometrics, vitals, and lab values.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+
+  <!-- Title -->
+  <title>BioMath Health Assistant | Home</title>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="image.png" type="image/x-icon">
+</head>
+<body class="theme-light">
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container flex-between">
+      <h1 class="logo">BioMath<span class="highlight">+</span></h1>
+      <nav role="navigation" class="navbar" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page" class="active">Home</a></li>
+          <li><a href="core.html">Core</a></li>
+          <li><a href="anthropometrics.html">Anthropometrics</a></li>
+          <li><a href="vitals.html">Vitals</a></li>
+          <li><a href="labs.html">Labs</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" role="region" aria-label="Welcome Section">
+    <div class="container hero-inner">
+      <h2 class="hero-title">Welcome to <span class="highlight">BioMath Health Assistant</span></h2>
+      <p class="hero-text">Perform accurate health-related calculations like <strong>BMI</strong>, <strong>BSA</strong>, <strong>MAP</strong>, and <strong>eGFR</strong> — fast and reliable.</p>
+      <a href="core.html" class="btn btn-primary">Start Now</a>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main id="main-content" role="main" class="main-content">
+    <section class="features container">
+      <h2 class="section-title">Explore Modules</h2>
+      <div class="grid">
+        <!-- Card -->
+        <article class="card" tabindex="0">
+          <h3>Core</h3>
+          <p>Enter basic details like weight, height, age, and sex. Required for all modules.</p>
+          <a href="core.html" class="btn btn-outline">Go to Core</a>
+        </article>
+        <!-- Card -->
+        <article class="card" tabindex="0">
+          <h3>Anthropometrics</h3>
+          <p>Calculate BMI, BSA, Waist-Hip Ratio, and other anthropometric indices.</p>
+          <a href="anthropometrics.html" class="btn btn-outline">Go to Anthropometrics</a>
+        </article>
+        <!-- Card -->
+        <article class="card" tabindex="0">
+          <h3>Vitals</h3>
+          <p>Work with Heart Rate, BP, MAP, Rate Pressure Product, and other vitals.</p>
+          <a href="vitals.html" class="btn btn-outline">Go to Vitals</a>
+        </article>
+        <!-- Card -->
+        <article class="card" tabindex="0">
+          <h3>Labs</h3>
+          <p>Analyze creatinine clearance, osmolality, lipid indices, and lab results.</p>
+          <a href="labs.html" class="btn btn-outline">Go to Labs</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container flex-between">
+      <p>&copy; <span id="year"></span> BioMath Health Assistant. <span class="disclaimer">For educational purposes only.</span></p>
+      <nav aria-label="Footer Navigation">
+        <a href="#">Privacy</a> | <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- NoScript -->
+  <noscript>
+    <div class="noscript-warning">
+      JavaScript is disabled in your browser. Some features may not work properly.
+    </div>
+  </noscript>
+
+  <!-- JavaScript -->
+  <script src="js/index.js" defer></script>
+</body>
+</html>

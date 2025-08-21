@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vitals Calculators - BioMath Health Assistant">
+  <meta name="author" content="BioMath Team">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Title -->
+  <title>BioMath Health Assistant | Vitals</title>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vitals.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="image.png" type="image/x-icon">
+</head>
+<body class="theme-light">
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container flex-between">
+      <h1 class="logo">BioMath<span class="highlight">+</span></h1>
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="core.html">Core</a></li>
+          <li><a href="anthropometrics.html">Anthropometrics</a></li>
+          <li><a href="vitals.html" aria-current="page" class="active">Vitals</a></li>
+          <li><a href="labs.html">Labs</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main-content" role="main" class="main-content">
+    <section class="container">
+      <h2>Vital Signs Calculations</h2>
+      <p>Enter vital parameters to calculate <strong>MAP</strong>, <strong>RPP</strong>, and <strong>Pulse Pressure</strong>.</p>
+
+      <!-- Form -->
+      <form id="vitals-form">
+        <fieldset>
+          <legend>Vitals Input</legend>
+          
+          <label for="sbp">Systolic BP (mmHg)</label>
+          <input id="sbp" name="sbp" type="number" min="50" max="250" required>
+
+          <label for="dbp">Diastolic BP (mmHg)</label>
+          <input id="dbp" name="dbp" type="number" min="30" max="150" required>
+
+          <label for="hr">Heart Rate (bpm)</label>
+          <input id="hr" name="hr" type="number" min="30" max="220" required>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Calculate</button>
+          <button type="reset" class="btn btn-outline">Clear</button>
+        </div>
+      </form>
+
+      <!-- Results -->
+      <section class="results" aria-live="polite">
+        <h3>Results</h3>
+        <div class="grid">
+          <div class="result-card">
+            <h4>Mean Arterial Pressure (MAP)</h4>
+            <p id="map-result">--</p>
+          </div>
+          <div class="result-card">
+            <h4>Pulse Pressure (PP)</h4>
+            <p id="pp-result">--</p>
+          </div>
+          <div class="result-card">
+            <h4>Rate Pressure Product (RPP)</h4>
+            <p id="rpp-result">--</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container flex-between">
+      <p>&copy; <span id="year"></span> BioMath Health Assistant. <span class="disclaimer">For educational use only.</span></p>
+      <nav aria-label="Footer Navigation">
+        <a href="#">Privacy</a> | <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/vitals.js" defer></script>
+</body>
+</html>
